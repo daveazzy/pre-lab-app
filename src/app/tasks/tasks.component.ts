@@ -8,6 +8,6 @@ import { DUMMY_USERS } from '../dummy-users';
   styleUrl: './tasks.component.css',
 })
 export class TasksComponent {
-  name = input.required<string>()
+  name = input<string | undefined>()
   
 }
