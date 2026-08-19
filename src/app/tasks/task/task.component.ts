@@ -1,5 +1,5 @@
-import { Component, input } from '@angular/core';
-import { DummyTasks } from '../tasks.component';
+import { Component, input, output } from '@angular/core';
+import { type DummyTasks } from '../task.model';
 
 @Component({
   selector: 'app-task',
@@ -9,6 +9,9 @@ import { DummyTasks } from '../tasks.component';
 })
 export class TaskComponent {
   task = input.required<DummyTasks>()
+  complete = output<string>()
 
-  
+  onCompleteTask() {
+    this.complete.emit(this.task().id)
+  }
 }

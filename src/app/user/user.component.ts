@@ -1,11 +1,6 @@
 // legacy code comented at the end of the file
 import { Component, computed, input, output } from "@angular/core";
-
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
+import { type User } from "./user.model";
 
 @Component({
   selector: 'app-user',
@@ -15,6 +10,7 @@ interface User {
 })
 export class UserComponent {
   user = input.required<User>()
+  selected = input.required<boolean>()
 
   select = output<string>();
 
